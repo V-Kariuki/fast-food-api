@@ -3,7 +3,7 @@ language: python
 python:
   
   
-  -"3.3"
+  -"3.6"
   
 # Command to install dependancies
 install:
@@ -13,6 +13,11 @@ install:
 # command to run tests
 script:
   -pytest 
+
+#safelist
+branches:
+  -develop
+  -feature
 
 after_success:
   -coveralls
