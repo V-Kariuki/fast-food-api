@@ -25,7 +25,7 @@ class TestApi(unittest.TestCase):
 
         self.app_context = self.app.app_context()
 
-        self.new_order = {"name": "Kill", "price": 200200, "description": "tasty"}
+        self.new_order = {"name": "Kuku", "price": 2000, "description": "tamu"}
 
 
 
