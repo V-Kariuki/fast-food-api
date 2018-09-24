@@ -20,7 +20,7 @@ class Orders(Resource):
     def post(self):
         """Posts a specific order"""
         order_data = {}
-        data = request.get_json()
+        data = request.get_json(force = True)
         order_data['name'] = data['name']
         order_data['price'] = data['price']
         order_data['description'] = data['description']
@@ -44,7 +44,7 @@ class Specific_Order(Resource):
     def put(self, id):
         order = [order for order in orders if order['id'] == id]
         if order:
-            data = request.get_json()
+            data = request.get_json(force = True)
             order[0]['name'] = data['name']
             order[0]['price'] = data['price']
             order[0]['description'] = data['description']
@@ -52,7 +52,7 @@ class Specific_Order(Resource):
             # orders.append(order_data)
             return {'order': order[0]}, 200
         else:
-            return {'message':'Error ,Invalid order object'}, 200
+            return {'message':'Error ,Invalid order'}, 200
     
     def delete(self, id):
         order = [order for order in orders if order['id'] == id]
@@ -60,4 +60,4 @@ class Specific_Order(Resource):
             del orders[0]
             return {'orders': orders}, 204
         else:
-            return {'message': 'Error ,Invalid order object'}, 204
+            return {'message': 'Error ,Invalid order'}, 204
