@@ -17,7 +17,6 @@ script:
 #safelist
 branches:
   -develop
-  -feature
 
 after_success:
   -coveralls
