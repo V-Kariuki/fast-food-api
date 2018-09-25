@@ -5,19 +5,19 @@ python:
   
   
 # Command to install dependancies
-install:
+install: 
   -pip3 install -r requirements.txt
   -pip3 install pytest-cov
-  -pip3 install coveralls
+  -pip install coveralls
 
 # command to run tests
-script:
+script: 
   -pytest --cov = app
 
-after_success:
+after_success: 
   -coveralls
 
-after_script:
+after_script: 
   -coveralls 
 
 
