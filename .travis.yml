@@ -8,15 +8,11 @@ python:
 install:
   -pip3 install -r requirements.txt
   -pip3 install pytest-cov
-  
+  -pip3 install coveralls
 
 # command to run tests
 script:
-  -pytest 
-
-#safelist
-branches:
-  -develop
+  -pytest --cov = app
 
 after_success:
   -coveralls
