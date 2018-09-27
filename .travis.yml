@@ -10,7 +10,7 @@ install:
 
 # command to run tests
 script: 
-    - coverage run -m pytest --cov = app/
+    - coverage run -m --source app pytest
     - python -m coverage report -m
 
 after_success: 
