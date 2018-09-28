@@ -4,10 +4,9 @@ from app.api.v1.views import Orders, Specific_Order
 from instance.config import app_config
 
 
-def create_app(config_name='development'):
+def create_app():
 	app = Flask(__name__, instance_relative_config=True)
 	app.config.from_object(app_config["development"])
-	app.config.from_pyfile('config.py')
 	from .api.v1 import orders_bp as orders_blueprint
 	api = Api(orders_blueprint)
 	app.register_blueprint(orders_blueprint, url_prefix='/api/v1')

@@ -1,20 +1,20 @@
 import os
 
-class Config(object):
+'''class Config(object):
     """ Parent configuration class """
     pass
     
-
-class DevelopmentConfig(Config):
+'''
+class DevelopmentConfig():
     """ Development configuration class that inherits from the Config Parent Class"""
     DEBUG = True
 
-class TestConfig(Config):
+class TestConfig():
     """ Testing configuration class that inherits from the Config Parent Class"""
     DEBUG = True
     TESTING = True
 
-class ProductionConfig(Config):
+class ProductionConfig():
     """ Prduction configuration class that inherits from the Config Parent Class"""
     DEBUG = False
     TESTING = False
