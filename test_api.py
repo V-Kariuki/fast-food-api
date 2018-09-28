@@ -19,13 +19,13 @@ class TestApi(unittest.TestCase):
 
     def setUp(self):
 
-        self.app = create_app("testing")
+        self.app = create_app()
 
         self.client = self.app.test_client()
 
         self.app_context = self.app.app_context()
 
-        self.new_order = {"name": "Kuku", "price": 2000, "description": "tamu"}
+        self.new_order = {"name": "Kuku", "price": 2000, "description": "tamu","status":"pending"}
 
 
 
