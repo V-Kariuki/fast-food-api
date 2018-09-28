@@ -1,0 +1,23 @@
+
+language: python
+python: 
+  - "3.6"
+  
+  
+# Command to install dependancies
+install: 
+  - pip3 install -r requirements.txt
+
+# command to run tests
+script: 
+    - coverage run -m --source app,instance pytest
+    - python -m coverage report -m
+
+after_success: 
+  - coveralls
+
+after_script: 
+  - coveralls 
+
+
+
