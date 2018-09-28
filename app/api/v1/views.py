@@ -24,6 +24,7 @@ class Orders(Resource):
         order_data['name'] = data['name']
         order_data['price'] = data['price']
         order_data['description'] = data['description']
+        order_data['status'] = data['status']
         order_data['id'] = len(orders) + 1    
         orders.append(order_data)
         if not data['name'] or not data['price'] or not data['description']:
@@ -57,7 +58,7 @@ class Specific_Order(Resource):
             order[0]['name'] = data['name']
             order[0]['price'] = data['price']
             order[0]['description'] = data['description']
-               
+            order[0]['status']  = data['status']
             # orders.append(order_data)
             return {'order': order[0]}, 200
         else:

@@ -1,7 +1,7 @@
 import os
 from app import create_app
 
-app = create_app(os.getenv("APP_SETTINGS") or "development")
+app = create_app()
 
 port = os.environ.get("PORT", 5000)
 if __name__ == '__main__':
